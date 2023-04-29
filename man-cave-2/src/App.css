@@ -1,0 +1,37 @@
+body{
+  background-image: url("https://img.freepik.com/free-vector/barber-shop-hair-styling-tools-supplies-set-realistic-monochrome-top-view-with-shaving-brush-vector-illustration_1284-30216.jpg");
+  background-size:auto;
+	backdrop-filter: blur(10px);
+}
+.styles-container {
+width: 20%;
+height:20%;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  color:rgb(0, 0, 0);
+}
+
+fieldset{
+  color:rgb(247, 247, 247);
+  width: 98%;
+  text-align: center;
+  height: 200px;
+  float: right;
+  background-color: black;
+  font-size: large;
+}
+.new-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+input[type="text"]{
+  background-color: black;
+  border: 1px solid white;
+  color:white;
+}
