@@ -27,6 +27,7 @@ function CommentsForm({ styleId }) {
 
     window.prompt("Thanks for your feedback!");
   }
+  
 
   return (
     <form onSubmit={handleSubmit}>

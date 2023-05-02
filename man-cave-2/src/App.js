@@ -6,6 +6,7 @@ import AddStyleForm from "./AddStyleForm";
 import LikeStyles from "./LikeStyles";
 import ManCave from "./man cave.JPG";
 import "./App.css";
+//import DeleteStyle from "./DeleteStyle";
 
 function App() {
   const [styles, setStyles] = useState([]);
@@ -26,9 +27,6 @@ function App() {
   function addStyle(newStyle) {
     setStyles([...styles, newStyle]);
   }
-  function likeStyle(id) {
-    // Your likeStyle function code
-  }
 
   function commentStyle(id, comment) {
  window.prompt("Thanks for your comment")
@@ -39,7 +37,11 @@ function App() {
       <div className="new-image-container">
       <img src={ManCave} alt=" "/>
       </div>
-      <Styles styles={styles} /><br></br>
+      
+      <div className="fieldset"> 
+      <SearchStyles onSearch={handleSearch} />
+      </div>
+      <Styles styles={styles}/>
       <div className="styles-container">
         {styles.map((style) => (
           <div key={style.id} className="style">
@@ -47,15 +49,13 @@ function App() {
             <p>{style.description}</p>
             <img src={style.image} alt={style.name} />
             <p>Price: ${style.price}</p>
-            <button onClick={() => likeStyle(style.id)}>Like👍</button>
           <input type="text" placeholder="Add a comment" />
           <button onClick={() => commentStyle(style.id)}>Comment</button>
           </div>
         ))}
       </div>
-      <LikeStyles />
-      <fieldset>
-      <SearchStyles onSearch={handleSearch} /></fieldset>
+      <LikeStyles />  
+      {/* <DeleteStyle deleteStyle={DeleteStyle} /> */}
       <AddStyleForm onAdd={addStyle} />
       <CommentsForm />
     </div>

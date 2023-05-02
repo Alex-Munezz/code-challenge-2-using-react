@@ -1,12 +1,8 @@
 body{
-  background-image: url("https://img.freepik.com/free-vector/barber-shop-hair-styling-tools-supplies-set-realistic-monochrome-top-view-with-shaving-brush-vector-illustration_1284-30216.jpg");
-  background-size:auto;
-	backdrop-filter: blur(10px);
-}
-.styles-container {
-width: 20%;
-height:20%;
-}
+  background-image: url("https://thumbs.dreamstime.com/z/barber-shop-hairdresser-background-set-hairdressing-scissors-shaving-brush-razor-comb-man-salon-vector-illustration-84650937.jpg");
+  background-size: contain;
+	backdrop-filter: blur(5px);
+} 
 
 h1 {
   width: 100%;
@@ -15,20 +11,20 @@ h1 {
   color:rgb(0, 0, 0);
 }
 
-fieldset{
-  color:rgb(247, 247, 247);
-  width: 98%;
-  text-align: center;
-  height: 200px;
+.fieldset{
   float: right;
-  background-color: black;
-  font-size: large;
+  color:rgb(247, 247, 247);
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  font-size: 2em;
+  width: 50%;
+  height: 170px;
 }
 .new-image-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20%;
+  height: 20%; 
 }
 input[type="text"]{
   background-color: black;
