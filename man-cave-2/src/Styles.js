@@ -4,7 +4,12 @@ function Styles() {
   const [styles, setStyles] = useState([]);
 
   const deleteStyle = (id) => {
-    setStyles(styles.filter((style) => style.id !== id));
+    // setStyles(styles.filter((style) => style.id !== id));
+    fetch(`http://localhost:3000/styles/${id}`,{
+      method:"DELETE"
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
   };
 
   return (
@@ -15,7 +20,7 @@ function Styles() {
           <h3>{style.name}</h3>
           <p>{style.description}</p>
           <img src={style.image} alt={style.name} />
-          <button onClick={() => deleteStyle(style.id)}>Delete</button>
+          <button onClick={() => deleteStyle(style.id)}>Delete SYFY</button>
         </div>
       ))}
     </div>

@@ -5,6 +5,7 @@ import CommentsForm from "./CommentsForm";
 import AddStyleForm from "./AddStyleForm";
 import LikeStyles from "./LikeStyles";
 import ManCave from "./man cave.JPG";
+import UpdateStyle from "./UpdateStyle";
 import "./App.css";
 //import DeleteStyle from "./DeleteStyle";
 
@@ -14,10 +15,13 @@ function App() {
   
 
   useEffect(() => {
-    fetch(`http://localhost:3000/styles?q=${searchQuery}`)
+    const interval = setInterval(() => {
+      fetch(`http://localhost:3000/styles?q=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => setStyles(data))
       .catch((error) => console.error(error));
+    }, 1000)
+    return () => clearInterval(interval)
   }, [searchQuery]);
 
 
@@ -31,6 +35,16 @@ function App() {
   function commentStyle(id, comment) {
  window.prompt("Thanks for your comment")
   }
+
+  const deleteStyle = (id) => {
+    // setStyles(styles.filter((style) => style.id !== id));
+    fetch(`http://localhost:3000/styles/${id}`,{
+      method:"DELETE"
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  };
+
 
   return (
     <div className="container">
@@ -51,12 +65,15 @@ function App() {
             <p>Price: ${style.price}</p>
           <input type="text" placeholder="Add a comment" />
           <button onClick={() => commentStyle(style.id)}>Comment</button>
+          <button onClick={() => deleteStyle(style.id)}>Delete</button>
           </div>
         ))}
       </div>
       <LikeStyles />  
       {/* <DeleteStyle deleteStyle={DeleteStyle} /> */}
       <AddStyleForm onAdd={addStyle} />
+      <UpdateStyle onAdd = {addStyle} />
+
       <CommentsForm />
     </div>
         )
