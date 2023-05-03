@@ -28,6 +28,7 @@ export default function UpdateStyle({onAdd}){
     return(
         <div>
         <fieldset>
+        <h3><u>UPDATE A STYLE HERE:</u></h3>
       <form onSubmit={handleSubmit}>
         <label>
           Style ID: 

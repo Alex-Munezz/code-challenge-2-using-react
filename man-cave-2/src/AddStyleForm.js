@@ -21,6 +21,7 @@ function AddStyleForm({ onAdd }) {
   return (
     <div>
         <fieldset>
+          <h4><u>ADD A STYLE HERE:</u></h4>
       <form onSubmit={handleSubmit}>
         <label>
           Style ID: 

@@ -15,13 +15,12 @@ function App() {
   
 
   useEffect(() => {
-    const interval = setInterval(() => {
+   
       fetch(`http://localhost:3000/styles?q=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => setStyles(data))
       .catch((error) => console.error(error));
-    }, 1000)
-    return () => clearInterval(interval)
+   
   }, [searchQuery]);
 
 
